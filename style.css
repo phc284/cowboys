@@ -13,7 +13,7 @@ html {
 
 
 body {
-  margin: 0px 15px;
+  margin: 0;
   padding: 0;
   /* background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./images/cowboy-field.jpg") no-repeat top center fixed; */
   background: var(--navyblue);
@@ -83,6 +83,8 @@ h2 {
   grid-area: news;
   display: grid;
   background: var(--silver);
+  max-height: 500px;
+  overflow: scroll;
 }
 
 .news-layout {
@@ -111,8 +113,8 @@ h2 {
 .news-item {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: 150px 1fr;
-  margin: 10px;
+  grid-template-columns: 100px 1fr;
+  margin: 5px;
 }
 
 .news-item img {
@@ -152,14 +154,14 @@ h2 {
 .twitter {
   grid-area: twitter;
   display: grid;
-  max-height: 750px;
   background: rgba(255, 255, 255, 1);
-  min-width: 350px;
 }
 
 .twitter-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin: 15px;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
   justify-content: center;
   align-items: center;
 }
@@ -174,10 +176,10 @@ h2 {
 .twitter-profile {
   display: grid;
   grid-template-columns: 75px 1fr;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
+  align-self: : center;
+  justify-self: center;
   grid-gap: 10px;
+  width: 100%
 }
 
 .twitter-profile > * {
@@ -208,11 +210,15 @@ h2 {
 /* Media Queries */
 
 /* Tablet */
-@media(max-width: 900px) {
+@media(max-width: 1024px) {
 
 }
 
 /* Phone */
-@media(max-width: 600px) {
-
+@media(max-width: 500px) {
+  .news-layout {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
 }
