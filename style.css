@@ -24,7 +24,7 @@ body {
 }
 
 h2 {
-  font-size: 32px;
+  font-size: 50px;
 }
 
 /* Layout */
@@ -89,17 +89,18 @@ h2 {
 
 .news-layout {
   display: grid;
-  /* grid-template-columns: 500px; */
   justify-content: center;
   text-align: center;
-  grid-gap: 10px;
+  padding-bottom: 25px;
 }
 
 .news-layout h2 {
   grid-column: 1 / -1;
   align-self: end;
   margin: 40px 0 0 0;
-  line-height: 25px;
+  line-height: 86%;
+  font-weight: 800;
+  margin-bottom: 15px;
 }
 
 .news-layout span{
@@ -113,7 +114,9 @@ h2 {
   grid-gap: 10px;
   margin: 5px;
   align-items: center;
-  /* border: 1px solid black; */
+  background: white;
+  border: 8px solid var(--navyblue);
+  padding: 15px;
 }
 
 .news-item img {
@@ -123,7 +126,10 @@ h2 {
 }
 .news-item a {
   width: 100%;
-  font-size: 14px;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--navyblue);
 }
 
 /* Websites */
@@ -136,9 +142,118 @@ h2 {
 .websites-layout {
   /* margin: 10px; */
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(1fr));
+  grid-template-columns: repeat(auto-fit, minmax(1fr));
+  grid-gap: 10% 0px;
+  margin-bottom: 4%;
   text-align: center;
-  justify-content: center;
+}
+
+.website-layout h2 {
+  grid-column: 1 / -1;
+}
+
+.website-item:nth-child(even) {
+  display: grid;
+  grid-template-columns: 500px 1fr;
+}
+
+.website-item:nth-child(even) a{
+  justify-self: end;
+}
+
+.website-item:nth-child(even) p{
+  text-align: center;
+}
+
+.website-item:nth-child(odd) {
+  display: grid;
+  grid-template-columns: 1fr 500px;
+}
+
+.website-item:nth-child(odd) a{
+  justify-self: start;
+}
+
+.website-item:nth-child(odd) p{
+  text-align: center;
+}
+
+.website-item a {
+  width: 350px;
+  height: auto;
+}
+
+.website-item a img {
+  width: 100%;
+  height: auto;
+}
+
+.website-item p {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* Forums */
+
+.forums {
+  grid-area: forums;
+  background: var(--silver);
+  text-align: center;
+  /* grid-row: 3;
+  grid-column: 1; */
+}
+
+.forums-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(1fr));
+  grid-gap: 10% 0px;
+  margin-bottom: 5%;
+  text-align: center;
+}
+
+.forum-layout h2 {
+  grid-column: 1 / -1;
+}
+
+.forum-item:nth-child(even) {
+  display: grid;
+  grid-template-columns: 500px 1fr;
+}
+
+.forum-item:nth-child(even) a{
+  justify-self: end;
+}
+
+.forum-item:nth-child(even) p{
+  text-align: center;
+}
+
+.forum-item:nth-child(odd) {
+  display: grid;
+  grid-template-columns: 1fr 500px;
+}
+
+.forum-item:nth-child(odd) a{
+  justify-self: start;
+}
+
+.forum-item:nth-child(odd) p{
+  text-align: center;
+}
+
+.forum-item a {
+  width: 350px;
+  height: auto;
+}
+
+.forum-item a img {
+  width: 100%;
+  height: auto;
+}
+
+.forum-item p {
+  font-size: 28px;
+  font-weight: 600;
 }
 
 .card-title a {
@@ -192,15 +307,7 @@ h2 {
   border-radius: 100px;
 }
 
-/* Forums */
 
-.forums {
-  grid-area: forums;
-  background: var(--silver);
-  text-align: center;
-  /* grid-row: 3;
-  grid-column: 1; */
-}
 
 
 /* Footer */
@@ -226,6 +333,8 @@ h2 {
    grid-auto-flow: column;
    max-height: 200px;
    align-items: center;
+   padding-bottom: 0;
+
  }
 
  .news-layout h2, .news-layout h4 {
@@ -237,7 +346,10 @@ h2 {
    padding: 25px;
    width: 150px;
    height: 125px;
-   border: 8px solid var(--navyblue);
+ }
+
+ .news-item a {
+  font-size: 14px;
  }
 
  .App {
