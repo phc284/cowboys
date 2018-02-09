@@ -143,38 +143,41 @@ h2 {
   /* margin: 10px; */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(1fr));
-  grid-gap: 10% 0px;
+  grid-row-gap: 6%;
   margin-bottom: 4%;
   text-align: center;
 }
 
-.website-layout h2 {
+.websites-layout h2 {
   grid-column: 1 / -1;
+  padding: 0;
+  margin-bottom: 0;
 }
 
 .website-item:nth-child(even) {
   display: grid;
-  grid-template-columns: 500px 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .website-item:nth-child(even) a{
   justify-self: end;
 }
 
-.website-item:nth-child(even) p{
+.website-item:nth-child(even) div{
   text-align: center;
+  padding: 0 7%;
 }
 
 .website-item:nth-child(odd) {
   display: grid;
-  grid-template-columns: 1fr 500px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .website-item:nth-child(odd) a{
   justify-self: start;
 }
 
-.website-item:nth-child(odd) p{
+.website-item:nth-child(odd) div{
   text-align: center;
 }
 
@@ -198,46 +201,47 @@ h2 {
 .forums {
   grid-area: forums;
   background: var(--silver);
-  text-align: center;
-  /* grid-row: 3;
-  grid-column: 1; */
 }
 
 .forums-layout {
+  /* margin: 10px; */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(1fr));
-  grid-gap: 10% 0px;
-  margin-bottom: 5%;
+  grid-row-gap: 6%;
+  margin-bottom: 4%;
   text-align: center;
 }
 
-.forum-layout h2 {
+.forums-layout h2 {
   grid-column: 1 / -1;
+  padding: 0;
+  margin-bottom: 0;
 }
 
 .forum-item:nth-child(even) {
   display: grid;
-  grid-template-columns: 500px 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .forum-item:nth-child(even) a{
   justify-self: end;
 }
 
-.forum-item:nth-child(even) p{
+.forum-item:nth-child(even) div{
   text-align: center;
+  padding: 0 7%;
 }
 
 .forum-item:nth-child(odd) {
   display: grid;
-  grid-template-columns: 1fr 500px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .forum-item:nth-child(odd) a{
   justify-self: start;
 }
 
-.forum-item:nth-child(odd) p{
+.forum-item:nth-child(odd) div{
   text-align: center;
 }
 
@@ -256,18 +260,6 @@ h2 {
   font-weight: 600;
 }
 
-.card-title a {
-  font-size: 20px;
-}
-
-.card-text {
-  font-size: 0.9em
-}
-
-.card {
-  margin: 10px;
-  border: 1px solid gray;
-}
 
 /* Twitter */
 
@@ -327,6 +319,15 @@ h2 {
    margin: 0;
  }
 
+ .App {
+   grid-template-areas: "header header header"
+   "news news news"
+   "websites websites websites"
+   "forums forums forums"
+   "twitter twitter twitter"
+   "footer footer footer";
+ }
+
  .news-layout {
    display: grid;
    grid-template-columns: auto;
@@ -340,6 +341,7 @@ h2 {
  .news-layout h2, .news-layout h4 {
    align-self: start;
    padding: 0px;
+   margin-right: 20px;
  }
 
  .news-item {
@@ -352,14 +354,6 @@ h2 {
   font-size: 14px;
  }
 
- .App {
-   grid-template-areas: "header header header"
-     "news news news"
-     "websites websites websites"
-     "forums forums forums"
-     "twitter twitter twitter"
-     "footer footer footer";
- }
 }
 
 /* Phone */
@@ -371,6 +365,64 @@ h2 {
     "forums"
     "twitter"
     "footer";
+  }
+
+  .websites-layout{
+    grid-gap: 25px;
+  }
+
+  .website-item {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .website-item:nth-child(even) a{
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+  .website-item:nth-child(even) div{
+    grid-column: 1 / -1;
+    justify-content: center;
+  }
+
+  .website-item:nth-child(odd) div{
+    justify-content: center;
+    grid-column: 1 / -1;
+  }
+  .website-item:nth-child(odd) a{
+    grid-column: 1 / -1;
+    grid-row: 1;
+    justify-self: center;
+    order: 0;
+  }
+
+  .forums-layout{
+    grid-gap: 25px;
+  }
+
+  .forum-item {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .forum-item:nth-child(even) a{
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+  .forum-item:nth-child(even) div{
+    grid-column: 1 / -1;
+    justify-content: center;
+  }
+
+  .forum-item:nth-child(odd) div{
+    justify-content: center;
+    grid-column: 1 / -1;
+  }
+  .forum-item:nth-child(odd) a{
+    grid-column: 1 / -1;
+    grid-row: 1;
+    justify-self: center;
+    order: 0;
   }
 
 }
