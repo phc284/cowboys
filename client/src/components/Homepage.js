@@ -5,8 +5,6 @@ import Forums from "./Forums";
 import Twitter from "./Twitter";
 import News from "./News";
 import Footer from "./Footer";
-// import Info from "./components/Info";
-import NavBar from "./NavBar";
 import './homepage.css';
 
 class Homepage extends Component {
