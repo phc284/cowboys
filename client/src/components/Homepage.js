@@ -7,6 +7,7 @@ import News from "./News";
 import Footer from "./Footer";
 // import Info from "./components/Info";
 import NavBar from "./NavBar";
+import './homepage.css';
 
 class Homepage extends Component {
   render() {

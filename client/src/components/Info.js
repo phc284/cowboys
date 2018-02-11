@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import Navbar from './NavBar'
+import Navbar from './NavBar';
+import style from './info.css';
+
 
 
 class Info extends Component {

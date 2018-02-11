@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import redditPhoto from '../images/cowboys-reddit.png';
 import czonePhoto from '../images/cowboys-zone.png';
 
-
 class Forums extends Component {
   render() {
     return (
