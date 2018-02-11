@@ -13,8 +13,6 @@
     "react-twitter-widgets": "^1.7.1"
   },
   "scripts": {
-    "predeploy": "cd client && npm run build",
-    "deploy": "cd client && gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
