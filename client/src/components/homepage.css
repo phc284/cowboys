@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Rubik:regular,black');
-
 :root {
   --roadblue: 0, 53, 148;
   --navyblue: #041E42;
@@ -8,8 +6,7 @@
 }
 
 html {
-  /* box-sizing: border-box; */
-  font-family: 'Rubik';
+  font-family: 'Open Sans', sans-serif;
   font-weight: normal;
 }
 
@@ -25,12 +22,11 @@ html {
 
  h2 {
    font-size: 50px;
-   font-family: 'Raleway';
+   font-family: 'Open Sans';
    font-weight: 800;
    letter-spacing: 5px;
  }
 
- /* Layout */
 
  .Homepage {
    display: grid;
@@ -43,7 +39,6 @@ html {
      "footer footer footer";
  }
 
- /* Navbar */
 
  .navbar {
    display: grid;
@@ -57,7 +52,7 @@ html {
  }
 
  .navbar div {
-   background: transparent;
+   background-color: transparent;
    align-self: center;
    padding: 10px 0;
    width: 100px;
@@ -71,7 +66,6 @@ html {
    color: white;
  }
 
- /* Header */
 
  .header {
    grid-area: header;
@@ -117,7 +111,7 @@ html {
  .header a {
    text-decoration: none;
    color: white;
-   background: transparent;
+   background-color: transparent;
    border: 1px solid white;
    border-radius: 5px;
    padding: 3%;
@@ -131,7 +125,6 @@ html {
    background: rgba(255, 255, 255, .4);
  }
 
- /* News */
 
  .news {
    grid-area: news;
@@ -183,7 +176,6 @@ html {
  }
 
 
- /* Websites */
 
  .websites {
    grid-area: websites;
@@ -191,7 +183,6 @@ html {
  }
 
  .websites-layout {
-   /* margin: 10px; */
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(1fr));
    grid-row-gap: 50px;
@@ -278,7 +269,6 @@ html {
    margin-bottom: 0;
  }
 
- /* Forums */
 
  .forums {
    grid-area: forums;
@@ -286,7 +276,6 @@ html {
  }
 
  .forums-layout {
-   /* margin: 10px; */
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(1fr));
    grid-row-gap: 50px;
@@ -316,7 +305,6 @@ html {
    --direction: right;
  }
 
- /* Twitter */
 
  .twitter {
    grid-area: twitter;
@@ -371,11 +359,9 @@ html {
    border-radius: 100px;
  }
 
- /* Footer */
 
  .footer {
    grid-area: footer;
-   /* grid-column: 1 / -1; */
    background-color: var(--pantgrey);
    height: 50px;
    display: flex;
@@ -383,7 +369,6 @@ html {
    justify-content: center;
  }
 
- /* Media Queries */
 
  @media (min-width: 1024px) {
    .website-item:nth-child(even) div {
@@ -394,7 +379,6 @@ html {
    }
  }
 
- /* Tablet */
 
  @media(max-width: 900px) {
    body {
@@ -431,7 +415,6 @@ html {
    }
  }
 
- /* Phone */
 
  @media(max-width: 700px) {
    .Homepage {

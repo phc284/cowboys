@@ -1,7 +1,172 @@
+/* :root {
+  --blue: 0, 53, 148;
+  --red: #000100;
+  --blue: #000100;
+}
+
 .info {
   color: white;
   font-size: 80px;
   justify-content: center;
-  margin-top: 250px;
+  margin: 250px 0px;
   text-align: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300, 1fr));
 }
+
+.info-item {
+  background: var(--red);
+  justify-self: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/cowboy-field.jpg") no-repeat top center fixed;
+  --direction: right;
+}
+
+@media(max-width: 700px) {
+  .Homepage {
+    grid-template-areas: "header"
+    "news"
+    "info"
+    "websites"
+    "forums"
+    "twitter"
+    "footer";
+  }
+  .websites-layout, .forums-layout {
+    grid-row-gap: 35px;
+  }
+  .website-item {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .website-item div {
+    margin: 0;
+    padding: 5%;
+  }
+
+  .website-item:nth-child(even) a {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+  .website-item:nth-child(even) div {
+    grid-column: 1 / -1;
+    justify-content: center;
+  }
+  .website-item:nth-child(odd) a {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    justify-self: center;
+    order: 0;
+  }
+  .website-item:nth-child(odd) div {
+    justify-content: center;
+    grid-column: 1 / -1;
+  }
+}
+
+@media(max-width: 900px) {
+  body {
+    margin: 0;
+  }
+  .Homepage {
+    grid-template-areas: "header header header"
+    "news news news"
+    "info info info"
+    "websites websites websites"
+    "forums forums forums"
+    "twitter twitter twitter"
+    "footer footer footer";
+  }
+  .news-layout {
+    display: grid;
+    grid-template-columns: auto;
+    grid-auto-flow: column;
+    max-height: 250px;
+    align-items: center;
+    padding-bottom: 0;
+  }
+  .news-layout h2, .news-layout h4 {
+    align-self: start;
+    padding: 0px;
+    margin-right: 20px;
+  }
+  .news-item {
+    width: 200px;
+    height: 75%;
+  }
+  .news-item a {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .website-item:nth-child(even) div {
+    margin-right: 6%;
+  }
+  .website-item:nth-child(odd) div {
+    margin-left: 6%;
+  }
+}
+
+.twitter {
+  grid-area: twitter;
+  display: grid;
+  background: rgba(255, 255, 255, 1);
+}
+
+.twitter-container {
+  display: grid;
+  margin: 0 15px 35px 35px;
+  grid-gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+  justify-content: center;
+  align-items: center;
+}
+
+.twitter-container h2 {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-column: 1 / -1;
+  font-size: 3em;
+  font-weight: 600;
+  align-items: center;
+  margin: 60px 0 35px 0;
+}
+
+.twitter-container h2:before, .twitter-container h2:after {
+  display: block;
+  content: '';
+  height: 10px;
+  margin-right: 10px;
+  background: linear-gradient(to var(left), var(--navyblue), transparent);
+}
+
+.twitter-container h2:after {
+  margin-left: 10px;
+  --direction: right;
+}
+
+.twitter-profile {
+  display: grid;
+  grid-template-columns: 75px 1fr;
+  align-self: center;
+  justify-self: center;
+  grid-gap: 10px;
+  width: 100%;
+}
+
+.twitter-profile>* {
+  width: 100%;
+  border-radius: 100px;
+}
+
+
+.footer {
+  grid-area: footer;
+  background-color: var(--pantgrey);
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */

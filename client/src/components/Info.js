@@ -7,7 +7,9 @@ class Info extends Component {
   render() {
     return (
       <div className="info">
+        <div className="info-item">
         COMING SOON
+        </div>
       </div>
     );
   }

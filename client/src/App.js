@@ -4,6 +4,7 @@ import Info from './components/Info';
 import Navbar from './components/NavBar';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
+import './components/homepage.css';
 
 const history = createBrowserHistory();
 

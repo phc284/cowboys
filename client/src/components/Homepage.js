@@ -5,7 +5,6 @@ import Forums from "./Forums";
 import Twitter from "./Twitter";
 import News from "./News";
 import Footer from "./Footer";
-import './homepage.css';
 
 class Homepage extends Component {
   render() {
