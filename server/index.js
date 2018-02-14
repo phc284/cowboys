@@ -15,12 +15,18 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../client/build')));
 
 app.get('/api/news', (req, res) => {
-  helpers.getNews(res);
+  helpers.getNews(res)
+    .then((data) => {
+      console.log('news data', data)
+      res.send(data.data)
+    });
 });
 
 app.get('/api/twitter', (req, res) => {
   helpers.getTwitterHandles(res);
 });
+
+// helpers.getSchedule();
 
 
 // app.get('/api/schedule', (req, res) => {

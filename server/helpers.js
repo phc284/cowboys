@@ -30,10 +30,11 @@ const getNews = (res) => {
             'language=en&' +
             `apiKey=${process.env.NEWS_API_KEY}`;
 
-  axios.get(url)
-    .then((data) => {
-      res.send(data.data.articles);
-    })
+  return axios.get(url)
+  // axios.get(url)
+  //   .then((data) => {
+  //     res.send(data.data.articles);
+  //   })
 }
 
 const getTwitterHandles = (res) => {
@@ -41,31 +42,22 @@ const getTwitterHandles = (res) => {
 }
 
 //
-// const getSchedule = (res) => {
-//   var query = `https://api.mysportsfeeds.com/v1.2/pull/nfl/2017-2018-regular/full_game_schedule.json?force=false`
-//   axios.get(query, {auth: {username: "phc284", password: "gotrunks8"}})
-//     .then((data) => {
-//       console.log(data.data)
-//       res.send(data.data)
-//     })
-//     .catch ((error) => {
-//       console.log('error', error)
-//     })
-//   // var schedule = msf.getData('nfl', '2017-2018-regular','team_gamelogs', 'json', {team: 'was'});
-//   // console.log('schedule', schedule);
-//   // res.send(schedule)
-//   // var data = schedule.teamgamelogs.gamelogs.map((game) => {
-//   //   var obj = {};
-//   //   obj.homeTeam = game.game.homeTeam
-//   //   obj.awayTeam = game.game.awayTeam;
-//   //   obj.homeScore = game.stats.PointsFor;
-//   //   obj.awayScore = game.stats.PointsAgainst;
-//   //   return obj;
-//   // });
-//   // res.send(data);
-// }
-//
-//
+const getSchedule = (res) => {
+  msf.getData('nfl', '2017-2018-regular','team_gamelogs', 'json', {team: 'was'})
+    .then((result) => {
+      var data = result.teamgamelogs.gamelogs.map((game) => {
+        var obj = {};
+        obj.homeTeam = game.game.homeTeam
+        obj.awayTeam = game.game.awayTeam;
+        obj.homeScore = game.stats.PointsFor;
+        obj.awayScore = game.stats.PointsAgainst;
+        return obj;
+      });
+      console.log('data', data)
+    });
+}
+
+
 // const getTeamStats = (res) => {
 //   var teamStats = msf.getData('nfl', '2017-2018-regular','overall_team_standings', 'json', {team: 'phi'});
 //   console.log(teamStats)
@@ -82,6 +74,6 @@ const getTwitterHandles = (res) => {
 module.exports = {
   getNews,
   getTwitterHandles,
-  // getSchedule,
+  getSchedule,
   // getTeamStats
 }
